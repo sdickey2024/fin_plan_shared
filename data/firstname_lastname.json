@@ -1,0 +1,52 @@
+{
+  "person": {
+    "name": "FirstName LastName",
+      "current_age": 55,
+      "stop_age": 95
+  },
+  "income": {
+      "monthly_salary":  15000.00,
+      "monthly_pension": 100.00
+  },
+  "expenses": {
+    "total_tax_rate": 0.317,
+    "breakdown": {
+	"internet_service": 60,
+	"cellular_service": 60,
+	"water_bill": 300,
+	"mortgage_principle": 1500,
+	"mortgage_expense": 1000,
+	"groceries": 400,
+	"auto_insurance": 150,
+	"google_storage": 10,
+	"gas": 40,
+	"dinning": 300,
+	"sdge_gas": 60,
+	"netflix": 20,
+	"family_healthcare": 1000,
+	"medicare": 0,
+	"emergency_buffer": 500,
+	"cash": 500,
+	"vacation": 200
+    }
+  },
+  "portfolio": {
+    "breakdown": {
+      "taxable": {
+          "short_term": 0,
+          "long_term": 100000
+      },
+      "non_taxable": {
+          "traditional_ira": 1750000,
+          "roth_ira": 50000
+      },
+      "savings": {
+        "emergency_fund": 10000,
+        "high_yield_savings": 2000
+      },
+      "brokerage": {
+        "stocks": 100000
+      }
+    }
+  }
+}

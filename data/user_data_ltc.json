@@ -1,0 +1,49 @@
+{
+    "description": "Retirement Simulation, 18k Long Term Care at 75",
+    "life_events": [
+	{
+	    "event": "Retirement",
+	    "date": "2032-01-01",
+	    "updated_income": {
+		"monthly_salary": 0.00,
+		"monthly_pension": 200.00
+	    },
+	    "updated_expenses": {
+		"total_tax_rate": 0.317,
+		"breakdown": {
+		    "chatgpt": 0
+		}
+	    }
+	},
+	{
+	    "event": "Retirement-SS",
+	    "date": "2032-02-01",
+	    "updated_income": {
+		"monthly_salary": 0.00,
+		"monthly_pension": 200.00,
+		"monthly_ss": 2500
+	    },
+	    "updated_expenses": {
+		"medicare": 200
+	    }
+	},
+	{
+	    "event": "Long Term Care - 18k",
+	    "date": "2045-01-01",
+	    "updated_expenses": {
+		"total_tax_rate": 0.0,
+		"breakdown": {
+		    "medicare": 18000.0
+		}
+	    },
+	    "updated_income": {
+		"monthly": 0.0
+	    }
+	}
+    ],
+    "assumptions": {
+	"expected_return": 0.08,
+	"variance": 0.02,
+	"inflation": 0.025
+    }
+}

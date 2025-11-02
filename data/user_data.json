@@ -1,0 +1,36 @@
+{
+    "description": "Baseline Retirement Simulation with Market Variability",
+    "life_events": [
+	{
+	    "event": "Retirement",
+	    "date": "2032-01-01",
+	    "updated_income": {
+		"monthly_salary": 0.00,
+		"monthly_pension": 200.00
+	    },
+	    "updated_expenses": {
+		"total_tax_rate": 0.317,
+		"breakdown": {
+		    "vacation": 1000
+		}
+	    }
+	},
+	{
+	    "event": "Retirement-SS",
+	    "date": "2032-02-01",
+	    "updated_income": {
+		"monthly_salary": 0.00,
+		"monthly_pension": 200.00,
+		"monthly_ss": 2500
+	    },
+	    "updated_expenses": {
+		"medicare": 200
+	    }
+	}
+    ],
+    "assumptions": {
+	"expected_return": 0.08,
+	"variance": 0.02,
+	"inflation": 0.025
+    }
+}

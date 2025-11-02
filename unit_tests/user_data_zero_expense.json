@@ -1,0 +1,66 @@
+{
+  "person": {
+    "name": "Zero Expense Test",
+    "current_age": 55
+  },
+  "description": "Test with zero expenses, zero income, full portfolio",
+  "expenses": {
+    "total_tax_rate": 0.0,
+    "breakdown": {
+      "housing": 0,
+      "groceries": 0,
+      "dinning": 0,
+      "auto_insurance": 0,
+      "gas": 0,
+      "family_healthcare": 0,
+      "entertainment": 0,
+      "utilities": 0,
+      "miscellaneous": 0,
+      "internet_service": 0,
+      "cellular_service": 0,
+      "google_storage": 0,
+      "adt_security": 0,
+      "mdvip": 0,
+      "water_bill": 0,
+      "sdge_gas": 0,
+      "orkin_pest": 0,
+      "lawn_care": 0,
+      "netflix": 0,
+      "water_delivery": 0,
+      "lwn.net": 0,
+      "daycare": 0,
+      "emergency_buffer": 0,
+      "cash": 0,
+      "vacation": 0
+    }
+  },
+  "income": {
+    "monthly": 0.0
+  },
+  "portfolio": {
+    "breakdown": {
+      "taxable": {
+        "short_term": 50000,
+        "long_term": 100000
+      },
+      "non_taxable": {
+        "traditional_ira": 2000000,
+        "roth_ira": 118000
+      },
+      "savings": {
+        "emergency_fund": 10000,
+        "high_yield_savings": 20000
+      },
+      "brokerage": {
+        "stocks": 350000
+      }
+    }
+  },
+  "life_events": [],
+  "assumptions": {
+    "expected_return": 0.06,
+    "variance": 0.02,
+    "inflation": 0.0
+  }
+}
+
