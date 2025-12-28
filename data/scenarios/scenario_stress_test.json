@@ -1,0 +1,81 @@
+{
+  "schema_type": "scenario",
+  "schema_version": 1,
+  "description": "Stress Test 20% Drop, Market and Inflation Volatility",
+  "life_events": [
+    {
+      "event": "Market Drop",
+      "offset": {
+        "from": "Retirement",
+        "years": 0,
+        "months": 2
+      },
+      "updated_assumptions": {
+        "expected_return": -0.2,
+        "variance": 0.0,
+        "inflation": 0.01
+      }
+    },
+    {
+      "event": "Recovery Year 1",
+      "offset": {
+        "from": "Market Drop",
+        "years": 1,
+        "months": 2
+      },
+      "updated_assumptions": {
+        "expected_return": 0.01,
+        "variance": 0.0,
+        "inflation": 0.01
+      }
+    },
+    {
+      "event": "Recovery Year 2",
+      "offset": {
+        "from": "Market Drop",
+        "years": 2,
+        "months": 2
+      },
+      "updated_assumptions": {
+        "expected_return": 0.01,
+        "variance": 0.0,
+        "inflation": 0.04
+      }
+    },
+    {
+      "event": "Market recovery",
+      "offset": {
+        "from": "Market Drop",
+        "years": 6,
+        "months": 2
+      },
+      "updated_assumptions": {
+        "expected_return": 0.06,
+        "variance": 0.02
+      }
+    },
+    {
+      "event": "Inflation spike",
+      "offset": {
+        "from": "Market Drop",
+        "years": 8,
+        "months": 2
+      },
+      "date": "2034-01-01",
+      "updated_assumptions": {
+        "inflation": 0.06
+      }
+    },
+    {
+      "event": "Scenario Ends (reload base assumptions)",
+      "offset": {
+        "from": "Market Drop",
+        "years": 10,
+        "months": 2
+      },
+      "reset": {
+        "assumptions": "base"
+      }
+    }
+  ]
+}

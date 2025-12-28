@@ -1,0 +1,63 @@
+{
+  "schema_type": "scenario",
+  "schema_version": 1,
+  "description": "Great Depression Lite – Shock, Aftershocks, and Slow Repair",
+  "life_events": [
+    {
+      "event": "1929-Style Market Crash",
+      "offset": { "from": "Retirement", "years": 2, "months": 0 },
+      "updated_assumptions": {
+        "expected_return": -0.40,
+        "variance": 0.04,
+        "inflation": -0.02
+      }
+    },
+    {
+      "event": "Follow-On Contraction",
+      "offset": { "from": "1929-Style Market Crash", "years": 1, "months": 0 },
+      "updated_assumptions": {
+        "expected_return": -0.10,
+        "variance": 0.03,
+        "inflation": -0.01
+      }
+    },
+    {
+      "event": "Policy Instability & Market Chop",
+      "offset": { "from": "1929-Style Market Crash", "years": 2, "months": 0 },
+      "updated_assumptions": {
+        "expected_return": 0.05,
+        "variance": 0.04,
+        "inflation": 0.00
+      }
+    },
+    {
+      "event": "Stagnant Recovery Phase",
+      "offset": { "from": "1929-Style Market Crash", "years": 3, "months": 0 },
+      "updated_assumptions": {
+        "expected_return": 0.02,
+        "variance": 0.025,
+        "inflation": 0.01
+      }
+    },
+    {
+      "event": "Late 1930s Normalization",
+      "offset": { "from": "1929-Style Market Crash", "years": 7, "months": 0 },
+      "updated_assumptions": {
+        "expected_return": 0.045,
+        "variance": 0.02,
+        "inflation": 0.02
+      }
+    },
+    {
+      "event": "Scenario Ends (reload base assumptions)",
+      "offset": {
+        "from": "Late 1930s Normalization",
+        "years": 10,
+        "months": 2
+      },
+      "reset": {
+        "assumptions": "base"
+      }
+    }
+  ]
+}

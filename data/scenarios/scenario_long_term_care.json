@@ -1,0 +1,16 @@
+{
+  "schema_type": "scenario",
+  "schema_version": 1,
+  "description": "Retirement Simulation, 18k Long Term Care at 75",
+  "life_events": [
+    {
+      "event": "Long Term Care - 18k",
+      "age": 75,
+      "updated_expenses": {
+        "breakdown": {
+          "medicare": 18000.0
+        }
+      }
+    }
+  ]
+}

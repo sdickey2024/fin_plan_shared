@@ -1,0 +1,57 @@
+{
+  "schema_type": "scenario",
+  "schema_version": 1,
+  "description": "Scenario 2 \u2013 30% Market Crash 5 years after Retirement",
+  "life_events": [
+    {
+      "event": "Market Crash",
+      "offset": {
+        "from": "Retirement",
+        "years": 5,
+        "months": 1
+      },
+      "updated_assumptions": {
+        "expected_return": -0.3,
+        "variance": 0.0,
+        "inflation": 0.0
+      }
+    },
+    {
+      "event": "Market Partial Recovery",
+      "offset": {
+        "from": "Market Crash",
+        "years": 1,
+        "months": 1
+      },
+      "updated_assumptions": {
+        "expected_return": 0.02,
+        "variance": 0.01,
+        "inflation": 0.01
+      }
+    },
+    {
+      "event": "Market Further Recovery",
+      "offset": {
+        "from": "Market Crash",
+        "years": 2,
+        "months": 1
+      },
+      "updated_assumptions": {
+        "expected_return": 0.04,
+        "variance": 0.015,
+        "inflation": 0.02
+      }
+    },
+    {
+      "event": "Scenario Ends (reload base assumptions)",
+      "offset": {
+        "from": "Market Crash",
+        "years": 3,
+        "months": 1
+      },
+      "reset": {
+        "assumptions": "base"
+      }
+    }
+  ]
+}

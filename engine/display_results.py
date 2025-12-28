@@ -14,19 +14,19 @@ def print_simulation(simulations, granularity='monthly'):
     for scenario, results in simulations.items():
         print(f"\n--- {scenario.upper()} RETURN SCENARIO ---")
         print(f"{'Age':<8}{'Month':<6}{'Year':<8}{'Portfolio':>17}{'Income':>12}"
-              f"{'Taxed Income':>16}{'Monthly Raw Exp.':>20}{'Raw Exp.':>15}"
-              f"{'Net Exp.':>15}{'Gross Up':>15}     {'Event'}")
+              f"{'Taxed Income':>16}{'Monthly Raw Exp.':>20}{'Disc. Exp.':>15}"
+              f"{'Montly Net Exp.':>15}{'Montly Gross Up':>15}     {'Event'}")
         for year_data in results:
             if granularity == 'yearly' and year_data['month'] != 1:
                 continue
             print(f"{year_data['age']:>6.2f}  {year_data['month']:<6}{year_data['year']:<8}"
                   f"${year_data['portfolio_end']:>15,.2f}"
-                  f"${year_data['income']:>11,.2f}"
-                  f"${year_data['taxed_income']:>15,.2f}"
+                  f"${year_data['monthly_income']:>11,.2f}"
+                  f"${year_data['monthly_taxed_income']:>15,.2f}"
                   f"${year_data['monthly_raw_expenses']:>19,.2f}"
-                  f"${year_data['raw_expenses']:>14,.2f}"
-                  f"${year_data['net_expenses']:>14,.2f}"
-                  f"${year_data['gross_up']:>14,.2f}     "
+                  f"${year_data.get('monthly_discretionary_expenses', 0):>14,.2f}"
+                  f"${year_data['monthly_net_expenses']:>14,.2f}"
+                  f"${year_data['monthly_gross_up']:>14,.2f}     "
                   f"{year_data['event']}")
 
 def print_simulation_csv(simulations, filename_prefix="simulation_output", granularity='monthly'):

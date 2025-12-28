@@ -1,0 +1,83 @@
+{
+  "schema_type": "scenario",
+  "schema_version": 1,
+  "description": "Stagflation & Policy Brutality: 1960s Through 1980s",
+  "life_events": [
+    {
+      "event": "Stagflation Onset",
+      "offset": {
+        "from": "Retirement",
+        "years": 1,
+        "months": 0
+      },
+      "updated_assumptions": {
+        "expected_return": -0.05,
+        "variance": 0.03,
+        "inflation": 0.07
+      }
+    },
+    {
+      "event": "Stagflation Year 2",
+      "offset": {
+        "from": "Stagflation Onset",
+        "years": 1,
+        "months": 0
+      },
+      "updated_assumptions": {
+        "expected_return": 0.02,
+        "variance": 0.035,
+        "inflation": 0.065
+      }
+    },
+    {
+      "event": "Stagflation Year 3",
+      "offset": {
+        "from": "Stagflation Onset",
+        "years": 2,
+        "months": 0
+      },
+      "updated_assumptions": {
+        "expected_return": 0.03,
+        "variance": 0.03,
+        "inflation": 0.055
+      }
+    },
+    {
+      "event": "Policy Tightening Shock",
+      "offset": {
+        "from": "Stagflation Onset",
+        "years": 3,
+        "months": 6
+      },
+      "updated_assumptions": {
+        "expected_return": -0.08,
+        "variance": 0.04,
+        "inflation": 0.03
+      }
+    },
+    {
+      "event": "Slow Normalization",
+      "offset": {
+        "from": "Policy Tightening Shock",
+        "years": 2,
+        "months": 0
+      },
+      "updated_assumptions": {
+        "expected_return": 0.04,
+        "variance": 0.025,
+        "inflation": 0.035
+      }
+    },
+    {
+      "event": "Scenario Ends (reload base assumptions)",
+      "offset": {
+        "from": "Slow Normalization",
+        "years": 10,
+        "months": 2
+      },
+      "reset": {
+        "assumptions": "base"
+      }
+    }
+  ]
+}

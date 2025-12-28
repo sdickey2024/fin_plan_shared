@@ -1,0 +1,73 @@
+{
+  "schema_type": "scenario",
+  "schema_version": 1,
+  "description": "Scenario 1 \u2013 Immediate Market Crash at Retirement",
+  "life_events": [
+    {
+      "event": "Market Crash",
+      "offset": {
+        "from": "Retirement",
+        "years": 0,
+        "months": 1
+      },
+      "updated_assumptions": {
+        "expected_return": -0.3,
+        "variance": 0.0,
+        "inflation": 0.0
+      }
+    },
+    {
+      "event": "Market Partial Recovery",
+      "offset": {
+        "from": "Market Crash",
+        "years": 1,
+        "months": 1
+      },
+      "updated_assumptions": {
+        "expected_return": 0.02,
+        "variance": 0.01
+      },
+      "updated_expenses": {
+        "breakdown": {
+          "emergency_buffer": 500,
+          "cash": 0,
+          "vacation": 500,
+          "dinning": 0,
+          "mdvip": 0
+        }
+      }
+    },
+    {
+      "event": "Market Further Recovery",
+      "offset": {
+        "from": "Market Crash",
+        "years": 2,
+        "months": 1
+      },
+      "updated_assumptions": {
+        "expected_return": 0.04,
+        "variance": 0.015
+      },
+      "updated_expenses": {
+        "breakdown": {
+          "emergency_buffer": 500,
+          "cash": 0,
+          "vacation": 0,
+          "dinning": 0,
+          "mdvip": 0
+        }
+      }
+    },
+    {
+      "event": "Scenario Ends (reload base assumptions)",
+      "offset": {
+        "from": "Market Crash",
+        "years": 3,
+        "months": 1
+      },
+      "reset": {
+        "assumptions": "base"
+      }
+    }
+  ]
+}

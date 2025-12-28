@@ -1,0 +1,46 @@
+{
+  "schema_type": "scenario",
+  "schema_version": 1,
+  "description": "Inflation Dominance – Silent Purchasing Power Collapse",
+  "life_events": [
+    {
+      "event": "Inflation Regime Shift",
+      "offset": { "from": "Retirement", "years": 3, "months": 0 },
+      "updated_assumptions": {
+        "expected_return": 0.05,
+        "variance": 0.02,
+        "inflation": 0.06
+      }
+    },
+    {
+      "event": "Inflation Persistence",
+      "offset": { "from": "Inflation Regime Shift", "years": 8, "months": 0 },
+      "updated_assumptions": {
+        "expected_return": 0.045,
+        "variance": 0.02,
+        "inflation": 0.055
+      }
+    },
+    {
+      "event": "Late Stabilization",
+      "offset": { "from": "Inflation Regime Shift", "years": 15, "months": 0 },
+      "updated_assumptions": {
+        "expected_return": 0.06,
+        "variance": 0.02,
+        "inflation": 0.025
+      }
+    },
+    {
+      "event": "Scenario Ends (reload base assumptions)",
+      "offset": {
+        "from": "Late Stabilization",
+        "years": 10,
+        "months": 2
+      },
+      "reset": {
+        "assumptions": "base"
+      }
+    }
+  ]
+}
+

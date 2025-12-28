@@ -650,6 +650,28 @@ USER_SCHEMA_GUESS = {
             "title":"Expenses",
             "properties": {
                 "total_tax_rate": {"type":"number", "title":"Total tax rate"},
+                "spending_policy": {
+                    "type": "object",
+                    "title": "Spending policy",
+                    "properties": {
+                        "type": {"type": "string", "title": "Policy type"},
+                        "cap_rate": {"type": "number", "title": "Cap rate (annual)"},
+                        "priority_order": {
+                            "type": "array",
+                            "title": "Priority order (cut list)",
+                            "items": {"type": "string"}
+                        }
+                    },
+                    "additionalProperties": {"type": "number"}
+                },
+                "classification": {
+                    "type": "object",
+                    "title": "Classification",
+                    "additionalProperties": {
+                        "type": "string",
+                        "enum": ["fixed", "discretionary"]
+                    }
+                },
                 "breakdown": {
                     "type":"object",
                     "title":"Breakdown",

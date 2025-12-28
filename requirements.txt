@@ -1,0 +1,27 @@
+#
+# Runtime dependencies (relaxed; direct deps only).
+#
+# This project previously used a full `pip freeze` lockfile, which is excellent
+# for reproducing one developer machine but too brittle for general installation.
+# If you need a fully reproducible environment, generate a lockfile separately
+# (e.g. `pip freeze > requirements.lock.txt`).
+#
+
+# Core numeric + plotting
+numpy>=1.26,<3
+pandas>=2.0,<3
+matplotlib>=3.7,<4
+plotly>=5,<8
+
+# Finance data / analytics
+yfinance>=0.2.30,<0.3
+pyfolio-reloaded>=0.9,<1
+QuantStats>=0.0.60,<0.1
+
+# Validation / schemas / CLI helpers
+jsonschema>=4.0,<5
+pydantic>=2.0,<3
+typer>=0.9,<1
+
+# GUI
+PySide6>=6.5,<7

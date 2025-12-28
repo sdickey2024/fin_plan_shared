@@ -1,5 +1,6 @@
 from datetime import datetime
 from debug import *
+from copy import deepcopy
 
 def normalize_user_data_events(data):
     """
@@ -35,6 +36,8 @@ def normalize_user_data_events(data):
     # Assumptions
     base_ass = data.setdefault("assumptions", {})
     ass_keys = set(base_ass.keys())
+    # Baseline assumptions for reset support (must be injected by loader)
+    base_ass_reset = data.get("_base_assumptions") or {}
 
     # If any event introduces brand-new keys, zero-init in baseline
     for ev in events:
@@ -63,7 +66,7 @@ def normalize_user_data_events(data):
     curr_exp   = dict(base_exp)
     curr_inc   = dict(base_inc)
     curr_port  = {cat: dict(sub) for cat, sub in base_port.items()}
-    curr_ass   = dict(base_ass)
+    curr_ass   = dict(base_ass_reset or base_ass)
 
     for ev in events:
         # EXPENSES
@@ -101,10 +104,22 @@ def normalize_user_data_events(data):
             new_pb[cat] = {sk: subvals.get(sk, 0.0) for sk in port_keys.get(cat, [])}
         ev["updated_portfolio"]["breakdown"] = new_pb
 
-        # ASSUMPTIONS
-        ua = ev.setdefault("updated_assumptions", {})
-        curr_ass.update({k: float(v) for k, v in ua.items()})
-        ev["updated_assumptions"] = {k: curr_ass[k] for k in ass_keys}
+        # ASSUMPTIONS (delta + snapshot, with reset support)
+        # - Keep ev["updated_assumptions"] as the authored DELTA (do not overwrite with snapshot).
+        # - Store carried-forward full state in ev["assumptions_snapshot"] for UI/debug.
+        reset = ev.get("reset")
+        if isinstance(reset, dict) and reset.get("assumptions") == "base":
+            curr_ass = dict(base_ass_reset or base_ass)
+
+        ua_delta = ev.get("updated_assumptions") or {}
+        if not isinstance(ua_delta, dict):
+            ua_delta = {}
+
+        # Apply delta to carried-forward state
+        curr_ass.update({k: float(v) for k, v in ua_delta.items()})
+
+        # Write snapshot separately (this is what you *wanted* for UI/debug)
+        ev["assumptions_snapshot"] = {k: curr_ass.get(k, 0.0) for k in ass_keys}
 
     # dump all the data
     dump_data(data)

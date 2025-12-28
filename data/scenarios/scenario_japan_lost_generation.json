@@ -1,0 +1,46 @@
+{
+  "schema_type": "scenario",
+  "schema_version": 1,
+  "description": "Japan-Style Lost Generation (Low Growth Trap)",
+  "life_events": [
+    {
+      "event": "Asset Bubble Aftermath",
+      "offset": { "from": "Retirement", "years": 1, "months": 0 },
+      "updated_assumptions": {
+        "expected_return": 0.01,
+        "variance": 0.015,
+        "inflation": 0.005
+      }
+    },
+    {
+      "event": "Persistent Low Growth",
+      "offset": { "from": "Asset Bubble Aftermath", "years": 5, "months": 0 },
+      "updated_assumptions": {
+        "expected_return": 0.02,
+        "variance": 0.01,
+        "inflation": 0.01
+      }
+    },
+    {
+      "event": "Delayed Normalization",
+      "offset": { "from": "Asset Bubble Aftermath", "years": 20, "months": 0 },
+      "updated_assumptions": {
+        "expected_return": 0.05,
+        "variance": 0.02,
+        "inflation": 0.02
+      }
+    },
+    {
+      "event": "Scenario Ends (reload base assumptions)",
+      "offset": {
+        "from": "Delayed Normalization",
+        "years": 10,
+        "months": 2
+      },
+      "reset": {
+        "assumptions": "base"
+      }
+    }
+  ]
+}
+

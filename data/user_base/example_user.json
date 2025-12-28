@@ -1,0 +1,80 @@
+{
+  "schema_type": "user_base",
+  "schema_version": 1,
+  "person": {
+    "name": "Example User",
+    "birthdate": "1975-01-01",
+    "stop_age": 95
+  },
+  "income": {
+    "monthly_salary": 0.0,
+    "monthly_pension": 0.0
+  },
+  "expenses": {
+    "total_tax_rate": 0.25,
+    "spending_policy": {
+      "type": "portfolio_cap",
+      "cap_rate": 0.035,
+      "priority_order": [
+        "housing",
+        "utilities",
+        "healthcare",
+        "groceries",
+        "insurance",
+        "transportation",
+        "vacation",
+        "entertainment"
+      ]
+    },
+    "classification": {
+      "housing": "fixed",
+      "utilities": "fixed",
+      "healthcare": "fixed",
+      "groceries": "fixed",
+      "insurance": "fixed",
+      "transportation": "fixed",
+      "vacation": "discretionary",
+      "entertainment": "discretionary",
+      "misc": "discretionary"
+    },
+    "breakdown": {
+      "housing": 1500,
+      "utilities": 300,
+      "healthcare": 600,
+      "groceries": 500,
+      "insurance": 400,
+      "transportation": 300,
+      "vacation": 500,
+      "entertainment": 300,
+      "misc": 200
+    }
+  },
+  "portfolio": {
+    "breakdown": {
+      "non_taxable": {
+        "traditional_ira": 900000,
+        "roth_ira": 500000
+      },
+      "brokerage": {
+        "stocks": 500000
+      },
+      "savings": {
+        "cash": 100000
+      }
+    }
+  },
+  "assumptions": {
+    "expected_return": 0.065,
+    "variance": 0.02,
+    "inflation": 0.025
+  },
+  "life_events": [
+    {
+      "event": "Retirement",
+      "age": 61,
+      "updated_income": {
+        "monthly_salary": 0.0
+      }
+    }
+  ]
+}

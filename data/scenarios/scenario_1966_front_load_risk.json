@@ -1,0 +1,45 @@
+{
+  "schema_type": "scenario",
+  "schema_version": 1,
+  "description": "1966 Retirement Timing – Front-Loaded Sequence Risk",
+  "life_events": [
+    {
+      "event": "Immediate Market Shock",
+      "offset": { "from": "Retirement", "years": 0, "months": 1 },
+      "updated_assumptions": {
+        "expected_return": -0.25,
+        "variance": 0.03,
+        "inflation": 0.04
+      }
+    },
+    {
+      "event": "Lost Decade Begins",
+      "offset": { "from": "Immediate Market Shock", "years": 1, "months": 0 },
+      "updated_assumptions": {
+        "expected_return": 0.03,
+        "variance": 0.025,
+        "inflation": 0.05
+      }
+    },
+    {
+      "event": "Late Recovery",
+      "offset": { "from": "Lost Decade Begins", "years": 10, "months": 0 },
+      "updated_assumptions": {
+        "expected_return": 0.06,
+        "variance": 0.02,
+        "inflation": 0.025
+      }
+    },
+    {
+      "event": "Scenario Ends (reload base assumptions)",
+      "offset": {
+        "from": "Late Recovery",
+        "years": 10,
+        "months": 2
+      },
+      "reset": {
+        "assumptions": "base"
+      }
+    }
+  ]
+}
