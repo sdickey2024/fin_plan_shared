@@ -80,9 +80,16 @@ cd fin_plan
 
 ### 2. Create and activate a virtual environment (recommended)
 
+#### Use Generic venv For System
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
+```
+
+### Use fin_plan Specific Venv
+```bash
+python3 -m venv ~/python_venv/fin_plan
+source ~/python_venv/fin_plan/bin/activate
 ```
 
 You should see your shell prompt change to indicate the virtual environment is active.
